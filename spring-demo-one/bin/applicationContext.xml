@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Define your beans here -->
+    <bean id="myCoach"
+    	class = "io.sidkulk.BaseBallCoach">
+    	<!-- set up constructor injection -->
+    	<constructor-arg ref="myFortune" />
+    </bean>
+    
+    <bean id="myTrackCoach"
+    	class = "io.sidkulk.TrackCoach">
+    	<!-- set up constructor injection -->
+    	<constructor-arg ref="myFortune" />
+    </bean>
+    
+    <bean id="myESL" 
+    	class = "io.sidkulk.ESLSportsCoach">
+    </bean>
+    
+    <bean id="myFortune" 
+    	class="io.sidkulk.HappyFortuneService">
+    </bean>
+    
+    <bean id="myCricketCoach" 
+    	class="io.sidkulk.CricketCoach">
+    	<!-- setup setter injection -->
+    	<property name="fortuneService" ref="myFortune" />
+    	
+    	<!-- Inject literal values -->
+    	<property name="email" value="sidkulk@gmail.com"/>
+    	<property name="team" value="Spring Risers"/>
+    </bean>
+    
+</beans>
