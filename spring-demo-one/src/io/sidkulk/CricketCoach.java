@@ -2,7 +2,7 @@ package io.sidkulk;
 
 public class CricketCoach implements Coach {
 
-	private FortuneService fortuneService;
+	private GetRandomFortuneService fortuneService;
 	private String email;
 	private String team;
 
@@ -29,7 +29,7 @@ public class CricketCoach implements Coach {
 		System.out.println("Spring called this constructor");
 	}
 
-	public void setFortuneService(FortuneService fortuneService) {
+	public void setFortuneService(GetRandomFortuneService fortuneService) {
 		System.out.println("Inside setter method");
 		this.fortuneService = fortuneService;
 	}
@@ -43,7 +43,7 @@ public class CricketCoach implements Coach {
 	@Override
 	public String getDailyFortune() {
 
-		return fortuneService.getFortune();
+		return "From Cricket Coach: " + fortuneService.getFortune();
 	}
 
 }

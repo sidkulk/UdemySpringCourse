@@ -2,20 +2,16 @@ package io.sidkulk;
 
 public class BaseBallCoach implements Coach {
 	// define a private field
-	private FortuneService fortuneService;
+	private GetRandomFortuneService fortuneService;
 
 	// define a constructor for dependency injection
-	public BaseBallCoach(FortuneService theFortuneService) {
+	public BaseBallCoach(GetRandomFortuneService theFortuneService) {
 		fortuneService = theFortuneService;
 	}
-	
-	
-	
+
 	public BaseBallCoach() {
 		super();
 	}
-
-
 
 	@Override
 	public String getDailyWorkout() {
@@ -26,6 +22,6 @@ public class BaseBallCoach implements Coach {
 	public String getDailyFortune() {
 
 		// use my fortuneService to get the fortune
-		return fortuneService.getFortune();
+		return "From BaseBall Coach: " + fortuneService.getFortune();
 	}
 }

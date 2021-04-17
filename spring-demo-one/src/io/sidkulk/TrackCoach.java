@@ -1,9 +1,9 @@
 package io.sidkulk;
 
 public class TrackCoach implements Coach {
-	private FortuneService fortuneService;
+	private GetRandomFortuneService fortuneService;
 
-	public TrackCoach(FortuneService theFortuneService) {
+	public TrackCoach(GetRandomFortuneService theFortuneService) {
 		fortuneService = theFortuneService;
 	}
 

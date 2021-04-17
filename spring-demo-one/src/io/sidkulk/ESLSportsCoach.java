@@ -1,6 +1,12 @@
 package io.sidkulk;
 
 public class ESLSportsCoach implements Coach{
+	private GetRandomFortuneService fortuneService;
+	
+	public ESLSportsCoach(GetRandomFortuneService fortuneService) {
+		super();
+		this.fortuneService = fortuneService;
+	}
 
 	@Override
 	public String getDailyWorkout() {
@@ -9,7 +15,6 @@ public class ESLSportsCoach implements Coach{
 
 	@Override
 	public String getDailyFortune() {
-		// TODO Auto-generated method stub
-		return null;
+		return "From ESL Coach: " + fortuneService.getFortune();
 	}
 }

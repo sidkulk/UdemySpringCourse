@@ -7,12 +7,10 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- load the properties file: sport.properties -->
-	<context:property-placeholder location="classpath:sport.properties"/>
-	
     <!-- Define your beans here -->
     <bean id="myCoach"
-    	class = "io.sidkulk.BaseBallCoach">
+    	class = "io.sidkulk.BaseBallCoach"
+    	scope = "prototype">
     	<!-- set up constructor injection -->
     	<constructor-arg ref="myRandomFortune" />
     </bean>
@@ -28,22 +26,12 @@
     	<constructor-arg ref="myRandomFortune" />
     </bean>
     
-    <bean id="myFortune" 
+    <bean id="myFortuneService" 
     	class="io.sidkulk.HappyFortuneService">
     </bean>
     
     <bean id="myRandomFortune" 
     	class="io.sidkulk.GetRandomFortuneService">
-    </bean>
-    
-    <bean id="myCricketCoach" 
-    	class="io.sidkulk.CricketCoach">
-    	<!-- setup setter injection -->
-    	<property name="fortuneService" ref="myRandomFortune" />
-    	
-    	<!-- Inject literal values -->
-    	<property name="email" value="${foo.email}"/>
-    	<property name="team" value="${foo.team}"/>
     </bean>
     
 </beans>
