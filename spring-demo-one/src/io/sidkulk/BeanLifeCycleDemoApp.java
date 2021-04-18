@@ -5,6 +5,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class BeanLifeCycleDemoApp {
 
 	public static void main(String[] args) {
+		
 		//	load spring config file
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beanLifeCycle-applicationContext.xml");
 		
