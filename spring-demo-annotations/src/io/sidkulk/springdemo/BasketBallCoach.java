@@ -8,9 +8,19 @@ public class BasketBallCoach implements Coach {
 
 	private FortuneService fortuneService;
 
+//	@Autowired
+//	public BasketBallCoach(FortuneService theFortuneService) {
+//		fortuneService = theFortuneService;
+//	}
+	
+	public BasketBallCoach() {
+		System.out.println(">> Debug Msg: BasketBallCoach default constructor");
+	}
+	
 	@Autowired
-	public BasketBallCoach(FortuneService theFortuneService) {
-		fortuneService = theFortuneService;
+	public void setFortuneService(FortuneService myFortuneService) {
+		System.out.println(">> Debug Msg: BasketBallCoach setter method");
+		fortuneService = myFortuneService;
 	}
 
 	@Override

@@ -16,8 +16,8 @@ public class AnnotDemoApp {
 		
 		//	call methods on the bean
 		System.out.println(theCoach.getDailyFortune());
-		System.out.println(fuseCoach.getDailyFortune());
 		System.out.println(basCoach.getDailyFortune());
+		
 		
 		//	close the context
 		context.close();
