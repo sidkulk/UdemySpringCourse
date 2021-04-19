@@ -12,10 +12,12 @@ public class AnnotDemoApp {
 		//	get bean from spring container
 		Coach theCoach = context.getBean("thatTennisCoach", Coach.class);	//explicit bean id
 		Coach fuseCoach = context.getBean("fuseBallCoach", Coach.class);	//default bean id
+		Coach basCoach = context.getBean("theBasketBallCoach", Coach.class);
 		
 		//	call methods on the bean
-		System.out.println(theCoach.getDailyWorkout());
-		System.out.println(fuseCoach.getDailyWorkout());
+		System.out.println(theCoach.getDailyFortune());
+		System.out.println(fuseCoach.getDailyFortune());
+		System.out.println(basCoach.getDailyFortune());
 		
 		//	close the context
 		context.close();

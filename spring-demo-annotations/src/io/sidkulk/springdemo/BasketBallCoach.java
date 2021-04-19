@@ -3,24 +3,23 @@ package io.sidkulk.springdemo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component("thatTennisCoach")
-public class TennisCoach implements Coach {
+@Component("theBasketBallCoach")
+public class BasketBallCoach implements Coach {
 
 	private FortuneService fortuneService;
 
 	@Autowired
-	public TennisCoach(FortuneService theFortuneService) {
+	public BasketBallCoach(FortuneService theFortuneService) {
 		fortuneService = theFortuneService;
 	}
 
 	@Override
 	public String getDailyWorkout() {
-		return "practice your backhand volley";
+		return "Practice 3 pointer shots";
 	}
 
 	@Override
 	public String getDailyFortune() {
-		// TODO Auto-generated method stub
 		return fortuneService.getFortune();
 	}
 }
