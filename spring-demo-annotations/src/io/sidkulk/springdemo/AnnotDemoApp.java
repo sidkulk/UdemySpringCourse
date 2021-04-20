@@ -15,9 +15,10 @@ public class AnnotDemoApp {
 		Coach basCoach = context.getBean("theBasketBallCoach", Coach.class);
 		
 		//	call methods on the bean
+		System.out.println();
 		System.out.println(theCoach.getDailyFortune());
 		System.out.println(basCoach.getDailyFortune());
-		
+		System.out.println(fuseCoach.getDailyFortune());
 		
 		//	close the context
 		context.close();

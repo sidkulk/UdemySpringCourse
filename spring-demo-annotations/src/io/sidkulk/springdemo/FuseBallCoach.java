@@ -16,12 +16,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class FuseBallCoach implements Coach {
 
+	@Autowired
 	private FortuneService fortuneService;
 
-	@Autowired
-	public FuseBallCoach(FortuneService fortuneService) {
-		this.fortuneService = fortuneService;
-	}
+//	@Autowired
+//	public FuseBallCoach(FortuneService fortuneService) {	//	Constructor Injection
+//		this.fortuneService = fortuneService;
+//	}
 
 	@Override
 	public String getDailyWorkout() {

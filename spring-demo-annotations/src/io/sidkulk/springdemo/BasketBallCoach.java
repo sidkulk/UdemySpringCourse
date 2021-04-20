@@ -6,10 +6,11 @@ import org.springframework.stereotype.Component;
 @Component("theBasketBallCoach")
 public class BasketBallCoach implements Coach {
 
+	@Autowired
 	private FortuneService fortuneService;
 
-//	@Autowired
-//	public BasketBallCoach(FortuneService theFortuneService) {
+//	@Autowired	
+//	public BasketBallCoach(FortuneService theFortuneService) {	//	constructor injection
 //		fortuneService = theFortuneService;
 //	}
 	
@@ -17,11 +18,11 @@ public class BasketBallCoach implements Coach {
 		System.out.println(">> Debug Msg: BasketBallCoach default constructor");
 	}
 	
-	@Autowired
-	public void setFortuneService(FortuneService myFortuneService) {
-		System.out.println(">> Debug Msg: BasketBallCoach setter method");
-		fortuneService = myFortuneService;
-	}
+//	@Autowired
+//	public void setFortuneService(FortuneService myFortuneService) {	//	setter injection
+//		System.out.println(">> Debug Msg: BasketBallCoach setter method");
+//		fortuneService = myFortuneService;
+//	}
 
 	@Override
 	public String getDailyWorkout() {
