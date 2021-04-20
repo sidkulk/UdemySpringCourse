@@ -1,6 +1,7 @@
 package io.sidkulk.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 /**
@@ -17,6 +18,7 @@ import org.springframework.stereotype.Component;
 public class FuseBallCoach implements Coach {
 
 	@Autowired
+	@Qualifier("randomService")
 	private FortuneService fortuneService;
 
 //	@Autowired
@@ -32,7 +34,6 @@ public class FuseBallCoach implements Coach {
 
 	@Override
 	public String getDailyFortune() {
-		// TODO Auto-generated method stub
 		return fortuneService.getFortune();
 	}
 }

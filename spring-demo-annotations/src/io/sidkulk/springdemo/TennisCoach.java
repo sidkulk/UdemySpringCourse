@@ -1,6 +1,7 @@
 package io.sidkulk.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("thatTennisCoach")
@@ -8,6 +9,7 @@ public class TennisCoach implements Coach {
 
 //	private FortuneService fortuneService;
 	@Autowired
+	@Qualifier("restFullService")
 	private FortuneService newFortuneService;	//	field Injection
 	
 	public TennisCoach() {

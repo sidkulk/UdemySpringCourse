@@ -1,12 +1,14 @@
 package io.sidkulk.springdemo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component("theBasketBallCoach")
 public class BasketBallCoach implements Coach {
 
 	@Autowired
+	@Qualifier("myRandomService")
 	private FortuneService fortuneService;
 
 //	@Autowired	
